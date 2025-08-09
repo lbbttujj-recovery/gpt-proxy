@@ -32,7 +32,7 @@ export class OpenAIClient extends BaseAIClient {
       const completion = await this.client.chat.completions.create(
         {
           model: this.model,
-          temperature: 0.7,
+          temperature: 1,
           messages: this.buildMessagesForApi(sessionId, prompt),
         },
         { signal: controller.signal },
