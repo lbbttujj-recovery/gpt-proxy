@@ -4,4 +4,8 @@ export interface AIClient {
   ask(prompt: string): Promise<string>;
   askInSession(sessionId: string | number, prompt: string): Promise<string>;
   resetSession(sessionId: string | number): void;
+
+  // Управление моделью в рантайме
+  setModel(newModel: string): void;
+  getModel(): string;
 }

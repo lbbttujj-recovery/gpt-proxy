@@ -78,6 +78,16 @@ export abstract class BaseAIClient implements AIClient {
     this.sessions.set(id, trimmed);
   }
 
+    // Управление моделью: базовая реализация — noop / возвращает пустую строку.
+    // Фабрика-обёртка предоставляет реальную логику переключения модели.
+    setModel(newModel: string): void {
+      // Ничего не делаем в базовом клиенте — управление моделью осуществляется на уровне фабрики/обёртки.
+    }
+
+    getModel(): string {
+      return '';
+    }
+
   protected buildMessagesForApi(
     sessionId: string | number,
     nextUserContent: string,
